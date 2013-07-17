@@ -1,0 +1,16 @@
+<html>
+<body>
+	<div>
+		<h1>Table List</h1>
+		{% for table in object_list %}
+			<h3><a href="/roller/table/{{table.id}}">{{table.name}}</a></h3>
+			<p>{{table.description}}</p>
+			<form action="/roller/roll" method="get">
+				<input type="hidden" name="Table" value="{{table.id}}">
+				<input type="submit" value="Roll">
+			</form>
+			<hr>
+		{%endfor%}
+	</div>
+</body>
+</html>
